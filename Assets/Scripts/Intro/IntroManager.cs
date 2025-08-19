@@ -69,10 +69,19 @@ public class IntroManager : MonoBehaviour
         
         seq.AppendCallback(() =>
         {
-            // TODO: 글자 하나씩 나타나는 애니메이션, 연필 소리
             gameTitleText.gameObject.SetActive(true);
-            madeByText.gameObject.SetActive(true);
+            gameTitleText.text = "";
+            
+            seq.Append(gameTitleText
+                .DOText("Harvest Tales", 2f, true, ScrambleMode.None)
+                .OnComplete(() =>
+                {
+                    madeByText.gameObject.SetActive(true);
+                    madeByText.alpha = 0f;
+                    madeByText.DOFade(1f, 1f);
+                }));
         });
+
 
         seq.Play();
     }

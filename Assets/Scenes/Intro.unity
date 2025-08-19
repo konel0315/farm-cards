@@ -314,15 +314,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Harvest Tales
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2a20b144d9b139146ae4c44eeb0f7108, type: 2}
-  m_sharedMaterial: {fileID: -5237770231429859220, guid: 2a20b144d9b139146ae4c44eeb0f7108, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a9196216b0055bd489e6b4215a676e50, type: 2}
+  m_sharedMaterial: {fileID: -5585485043735588066, guid: a9196216b0055bd489e6b4215a676e50, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284276895
-  m_fontColor: {r: 0.6220073, g: 0.8784314, b: 0.36078435, a: 1}
+    rgba: 4281358710
+  m_fontColor: {r: 0.46226418, g: 0.34968543, b: 0.18970276, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -339,8 +339,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 46
+  m_fontSizeBase: 46
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -801,8 +801,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292461139
-  m_fontColor: {r: 0.3244037, g: 0.76169246, b: 0.8490566, a: 1}
+    rgba: 4287405939
+  m_fontColor: {r: 0.4493592, g: 0.6226415, b: 0.54939973, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -819,8 +819,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
