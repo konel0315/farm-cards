@@ -16,6 +16,15 @@ public class GameManager : MonoBehaviour
                 DontDestroyOnLoad(gameObject);
                 
                 Container = new ManagerContainer();
+                Container.Register(new CardManager());
+                Container.Register(new RoundManager());
+                
+                
+                Container.InitializeAll();
         }
-        
+        public void StartGame()
+        {
+            Debug.Log("게임 시작!");
+            Container.GetManager<RoundManager>().StartRound();
+        }
 }

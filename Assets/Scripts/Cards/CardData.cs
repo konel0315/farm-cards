@@ -1,7 +1,5 @@
-﻿namespace Cards
+﻿public class CardData
 {
-    public class CardData
-    {
-        
-    }
+    public string Title;
+    public bool IsScenario;
 }

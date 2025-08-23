@@ -1,7 +1,11 @@
-﻿namespace Cards
+﻿using UnityEngine;
+
+public class CardManager : IManager
 {
-    public class CardManager
+    public void Initialize(ManagerContainer container)
     {
-        
+        Debug.Log("CardManager 초기화 완료!");
     }
+    
+    
 }
