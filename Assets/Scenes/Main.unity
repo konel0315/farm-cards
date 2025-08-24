@@ -1495,6 +1495,7 @@ MonoBehaviour:
   choiceCard: {fileID: 1860456652}
   back: {fileID: 78489881}
   choiceText: {fileID: 0}
+  currentCards: []
 --- !u!1 &1677240032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,7 +1530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: -160}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1677240034
@@ -1824,7 +1825,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<color=#9C5E2B>\uAC10\uC790</color> <color=#7ADB33>\uC528\uC557</color> "
+  m_text: "<color=#9C5E2B>\uAC10\uC790</color> <color=#7ADB33>\uC528\uC557</color>
+    <br>(400\uC6D0)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a20b144d9b139146ae4c44eeb0f7108, type: 2}
   m_sharedMaterial: {fileID: -5237770231429859220, guid: 2a20b144d9b139146ae4c44eeb0f7108, type: 2}

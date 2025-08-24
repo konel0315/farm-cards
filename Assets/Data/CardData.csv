@@ -1,0 +1,8 @@
+﻿GroupID,Title,Name,TitleImage,Description,OptionText,OptionImage,Probability,Command,Priority,Weight,OneTime
+1,작물 선택,<color=#AE772C>촌장님</color> ,마을 촌장 할아버지.png,농사를 지으려면 씨앗이 있어야지!<br>원하는 씨앗을 골라보게,,,,,0,1,TRUE
+1,,,,,<color=#dc1818> 사과</color> <color=#7ADB33>씨앗</color> <br>(800원),사과.png,1,crop=사과,,,
+1,,,,,<color=#e1d96f> 참외</color> <color=#7ADB33>씨앗</color> <br>(500원),참외.png,1,crop=참외,,,
+1,,,,,<color=#db8437> 당근</color> <color=#7ADB33>씨앗</color> <br>(300원),당근.png,1,crop=당근,,,
+1,,,,,<color=#9C5E2B>감자</color> <color=#7ADB33>씨앗</color> <br>(400원),감자.png,1,crop=감자,,,
+1,,,,,<color=#82c713>수박</color> <color=#7ADB33>씨앗</color> <br>(1000원),수박.png,1,crop=수박,,,
+1,,,,,<color=#eb3e13>고추</color> <color=#7ADB33>씨앗</color> <br>(700원),고추.png,1,crop=고추,,,

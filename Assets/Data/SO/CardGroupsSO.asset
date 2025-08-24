@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c28dd13d1a504d00a8d65f0a053a7767, type: 3}
+  m_Name: CardGroupsSO
+  m_EditorClassIdentifier: 
+  CardGroupsByID:
+    _serializedList:
+    - Key: 1
+      Value:
+        Title: "\uC791\uBB3C \uC120\uD0DD"
+        Name: "<color=#AE772C>\uCD0C\uC7A5\uB2D8</color> "
+        TitleImage: "\uB9C8\uC744 \uCD0C\uC7A5 \uD560\uC544\uBC84\uC9C0.png"
+        Description: "\uB18D\uC0AC\uB97C \uC9C0\uC73C\uB824\uBA74 \uC528\uC557\uC774
+          \uC788\uC5B4\uC57C\uC9C0!<br>\uC6D0\uD558\uB294 \uC528\uC557\uC744 \uACE8\uB77C\uBCF4\uAC8C"
+        Priority: 0
+        Weight: 1
+        OneTime: 1
+        Options:
+        - OptionText: "<color=#dc1818> \uC0AC\uACFC</color> <color=#7ADB33>\uC528\uC557</color>
+            <br>(800\uC6D0)"
+          OptionImage: "\uC0AC\uACFC.png"
+          Variants:
+          - Probability: 1
+            Command: "crop=\uC0AC\uACFC"
+        - OptionText: "<color=#e1d96f> \uCC38\uC678</color> <color=#7ADB33>\uC528\uC557</color>
+            <br>(500\uC6D0)"
+          OptionImage: "\uCC38\uC678.png"
+          Variants:
+          - Probability: 1
+            Command: "crop=\uCC38\uC678"
+        - OptionText: "<color=#db8437> \uB2F9\uADFC</color> <color=#7ADB33>\uC528\uC557</color>
+            <br>(300\uC6D0)"
+          OptionImage: "\uB2F9\uADFC.png"
+          Variants:
+          - Probability: 1
+            Command: "crop=\uB2F9\uADFC"
+        - OptionText: "<color=#9C5E2B>\uAC10\uC790</color> <color=#7ADB33>\uC528\uC557</color>
+            <br>(400\uC6D0)"
+          OptionImage: "\uAC10\uC790.png"
+          Variants:
+          - Probability: 1
+            Command: "crop=\uAC10\uC790"
+        - OptionText: "<color=#82c713>\uC218\uBC15</color> <color=#7ADB33>\uC528\uC557</color>
+            <br>(1000\uC6D0)"
+          OptionImage: "\uC218\uBC15.png"
+          Variants:
+          - Probability: 1
+            Command: "crop=\uC218\uBC15"
+        - OptionText: "<color=#eb3e13>\uACE0\uCD94</color> <color=#7ADB33>\uC528\uC557</color>
+            <br>(700\uC6D0)"
+          OptionImage: "\uACE0\uCD94.png"
+          Variants:
+          - Probability: 1
+            Command: "crop=\uACE0\uCD94"
