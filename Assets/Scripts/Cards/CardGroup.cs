@@ -10,5 +10,6 @@ public class CardGroup
     public int Priority;
     public int Weight;
     public bool OneTime;
+    public int SeasonType;
     public List<CardOption> Options;
 }

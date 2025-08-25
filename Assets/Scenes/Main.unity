@@ -326,8 +326,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<color=#AE772C>\uCD0C\uC7A5\uB2D8</color> \n\uB18D\uC0AC\uB97C \uC9C0\uC73C\uB824\uBA74
-    \uC528\uC557\uC774 \uC788\uC5B4\uC57C\uC9C0!\n\uC6D0\uD558\uB294 \uC528\uC557\uC744
+  m_text: "<color=#AE772C>\uCD0C\uC7A5sd\uB2D8</color> \n\uB18D\uC0AC\uB97C \uC9C0\uC73C\uB824\uBA74
+    \uC528\uC557sd\uC774 \uC788\uC5B4\uC57C\uC9C0!\n\uC6D0\uD558\uB294 \uC528\uC557\uC744
     \uACE8\uB77C\uBCF4\uAC8C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a20b144d9b139146ae4c44eeb0f7108, type: 2}
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.35
+  m_fontSize: 46.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -856,6 +856,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729491852}
   m_CullTransparentMesh: 1
+--- !u!1 &860929221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 860929223}
+  - component: {fileID: 860929222}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &860929222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860929221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 550566ef6b7f4cf7bf1f06add4a1d384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardGroupsSO: {fileID: 11400000, guid: aa61120df621ddc42b71ee8b4a19353a, type: 2}
+--- !u!4 &860929223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860929221}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 598.46796, y: 292.40955, z: -0.6959296}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &874186824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,11 +1536,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75fb540341a24c2f80d96aa053ec3867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CardContainer: {fileID: 0}
   scenarioCard: {fileID: 1345976143}
+  screenImage: {fileID: 1398916170}
+  scenarioText: {fileID: 220176862}
   choiceCard: {fileID: 1860456652}
+  choiceText: {fileID: 1861887204}
+  choiceImage: {fileID: 1677240034}
   back: {fileID: 78489881}
-  choiceText: {fileID: 0}
   currentCards: []
+  choicePool: []
 --- !u!1 &1677240032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,6 +1708,7 @@ GameObject:
   - component: {fileID: 1860456655}
   - component: {fileID: 1860456654}
   - component: {fileID: 1860456656}
+  - component: {fileID: 1860456657}
   m_Layer: 5
   m_Name: Card_Choice
   m_TagString: Untagged
@@ -1768,6 +1819,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!225 &1860456657
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860456652}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1861887202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2120,3 +2183,4 @@ SceneRoots:
   - {fileID: 223849028}
   - {fileID: 874186829}
   - {fileID: 539241067}
+  - {fileID: 860929223}

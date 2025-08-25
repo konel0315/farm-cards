@@ -39,7 +39,8 @@ public static class ExcelLoader
                     Command    = split[8],
                     Priority   = SafeInt(split[9]),
                     Weight     = SafeInt(split[10]),
-                    OneTime    = SafeBool(split[11])
+                    OneTime    = SafeBool(split[11]),
+                    SeasonType = SafeInt(split[12]),
                 };
                 result.Add(card);
             }

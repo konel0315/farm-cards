@@ -3,26 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using TMPro;
 
 public class Card : MonoBehaviour
 {
+    [Header("Card Container")]
+    [SerializeField] private GameObject CardContainer;
+    
     [Header("Card Objects")]
     [SerializeField] private GameObject scenarioCard;
+    [SerializeField] private Image screenImage;
+    [SerializeField] private TMP_Text scenarioText;
+    
     [SerializeField] private GameObject choiceCard;
+    [SerializeField] private TMP_Text choiceText;
+    [SerializeField] private Image choiceImage;
     [SerializeField] private GameObject back;
-
-    [SerializeField] private Text choiceText;
+    
 
     [Header("Card Data")]
     public List<CardData> currentCards = new List<CardData>();
+    public List<CardOption> choicePool = new List<CardOption>(); // 최대 4개 랜덤 카드 저장
+    private int choiceIndex = 0;
     private CardData activeData;
 
     private bool isFlipping = false;
 
     private ChoiceCardTilt followMouse;
+    
+    public static Card Instance { get; private set; }
 
-    private void Start()
+    private void Awake()
     {
+        Instance = this;
+    }
+    
+    public void openCard()
+    {
+        if (CardContainer != null)
+            CardContainer.transform.localPosition = Vector3.zero;
+        
         back.SetActive(true);
         scenarioCard.SetActive(false);
         choiceCard.SetActive(false);
@@ -30,6 +50,67 @@ public class Card : MonoBehaviour
         scenarioCard.GetComponent<Button>().onClick.AddListener(OnScenarioClicked);
 
         followMouse = choiceCard.AddComponent<ChoiceCardTilt>();
+    }
+
+    private void closeCard()
+    {
+        back.SetActive(false);
+        scenarioCard.SetActive(false);
+        choiceCard.SetActive(false);
+    }
+
+    public void CardSetup(CardGroup group)
+    {
+        screenImage.sprite = Resources.Load<Sprite>($"Arts/Cards/{group.TitleImage}");
+        scenarioText.text = group.Name+"\n"+group.Description;
+        
+        choicePool.Clear();
+        if (group.Options == null || group.Options.Count == 0)
+            return;
+        
+        List<CardOption> optionsCopy = new List<CardOption>(group.Options);
+        int maxCount = Mathf.Min(4, optionsCopy.Count);
+
+        for (int i = 0; i < maxCount; i++)
+        {
+            int randIndex = Random.Range(0, optionsCopy.Count);
+            choicePool.Add(optionsCopy[randIndex]);
+            optionsCopy.RemoveAt(randIndex);
+        }
+        choiceIndex = 0;
+        UpdateChoiceCard();
+    }
+
+    private void UpdateChoiceCard()
+    {
+        if (choicePool == null || choicePool.Count == 0 || choiceIndex >= choicePool.Count)
+            return;
+
+        CardOption option = choicePool[choiceIndex];
+        
+        CardVariant variant = null;
+        if (option.Variants != null && option.Variants.Count > 0)
+        {
+            float total = 0f;
+            foreach (var v in option.Variants)
+                total += v.Probability;
+
+            float r = Random.Range(0f, total);
+            float sum = 0f;
+            foreach (var v in option.Variants)
+            {
+                sum += v.Probability;
+                if (r <= sum)
+                {
+                    variant = v;
+                    break;
+                }
+            }
+        }
+
+        choiceText.text = option.OptionText;
+        if (!string.IsNullOrEmpty(option.OptionImage))
+            choiceImage.sprite = Resources.Load<Sprite>($"Arts/Cards/{option.OptionImage}");
     }
 
     private IEnumerator SpawnAndFlip()
@@ -75,6 +156,7 @@ public class Card : MonoBehaviour
     private void OnScenarioClicked()
     {
         StartCoroutine(Flip());
+        
     }
 
     private void Update()
@@ -90,18 +172,54 @@ public class Card : MonoBehaviour
         }
     }
 
+    private IEnumerator NextChoiceFall()
+    {
+        var tilt = choiceCard.GetComponent<ChoiceCardTilt>();
+        if (tilt) Destroy(tilt);
+
+        Sequence seq = DOTween.Sequence();
+        seq.Join(choiceCard.transform.DOLocalMoveY(choiceCard.transform.localPosition.y - 600f, 0.6f));
+        seq.Join(choiceCard.transform.DOLocalRotate(new Vector3(0, 0, choiceCard.transform.localEulerAngles.z - 45f), 0.6f));
+        seq.Join(choiceCard.GetComponent<CanvasGroup>().DOFade(0f, 0.6f));
+
+        yield return seq.WaitForCompletion();
+
+        choiceIndex++;
+        UpdateChoiceCard();
+        ResetChoiceCardTransform();
+    }
+
+    private void ResetChoiceCardTransform()
+    {
+        choiceCard.transform.localPosition = new Vector3(0, -350f, 0);
+        choiceCard.transform.localRotation = Quaternion.identity;
+        choiceCard.GetComponent<CanvasGroup>().alpha = 1f;
+        choiceCard.AddComponent<ChoiceCardTilt>();
+    }
+
+    
     private void CheckChoice()
     {
+        bool isLastChoice = choiceIndex == choicePool.Count - 1;
         float rotZ = choiceCard.transform.localRotation.eulerAngles.z;
         if (rotZ > 180f) rotZ -= 360f;
 
-        if (rotZ <= -5f)
+        if (rotZ <= -10f)
         {
-            //제작 예정
+            if (!isLastChoice)
+            {
+                StartCoroutine(NextChoiceFall());
+            }
+            else
+            {
+                //불가능 소리 내기
+            }
+
+            
         }
-        else if (rotZ >= 5f)
+        else if (rotZ >= 10f)
         {
-            //제작 예정
+            
         }
     }
 }

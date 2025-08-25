@@ -14,4 +14,5 @@ public class CardData
     public int? Priority;
     public int? Weight;
     public bool? OneTime;
+    public int? SeasonType;
 }

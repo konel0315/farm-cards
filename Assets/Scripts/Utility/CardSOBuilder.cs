@@ -32,6 +32,7 @@ public static class CardSOBuilder
                     Priority = card.Priority ?? 0,
                     Weight = card.Weight ?? 0,
                     OneTime = card.OneTime ?? false,
+                    SeasonType = card.SeasonType??0,
                     Options = new List<CardOption>()
                 };
                 groups.Add(groupId, group);

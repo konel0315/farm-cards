@@ -2,7 +2,9 @@
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
-{ 
+{
+        [SerializeField]
+        private CardGroupsSO cardGroupsSO;    
         public static GameManager Instance { get; private set; }
         public ManagerContainer Container{get; private set;}
 
@@ -18,7 +20,7 @@ public class GameManager : MonoBehaviour
                 Container = new ManagerContainer();
                 Container.Register(new CardManager());
                 Container.Register(new RoundManager());
-                
+                Container.Register(cardGroupsSO);
                 
                 Container.InitializeAll();
         }

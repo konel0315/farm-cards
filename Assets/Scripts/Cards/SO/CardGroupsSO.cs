@@ -7,4 +7,9 @@ public class CardGroupsSO : ScriptableObject
 {
     [SerializedDictionary]
     public SerializedDictionary<int, CardGroup> CardGroupsByID = new SerializedDictionary<int, CardGroup>();
+    
+    public Dictionary<int,CardGroup> getSoCopy()
+    {
+        return new Dictionary<int, CardGroup>(CardGroupsByID);
+    }
 }

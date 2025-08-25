@@ -16,10 +16,10 @@ public class ChoiceCardTilt : MonoBehaviour
         
         transform.DOLocalRotate(new Vector3(0, 0, targetRotZ), followSpeed).SetUpdate(true);
     }
-
     public float GetCurrentZRotation()
     {
         float z = transform.localEulerAngles.z;
-        return z > 180f ? z - 360f : z;
+        if (z > 180f) z -= 360f;
+        return z;
     }
 }
