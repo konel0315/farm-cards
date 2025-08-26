@@ -5,6 +5,10 @@ public class GameManager : MonoBehaviour
 {
         [SerializeField]
         private CardGroupsSO cardGroupsSO;    
+        
+        [SerializeField]
+        private Card cardPrefab;
+        
         public static GameManager Instance { get; private set; }
         public ManagerContainer Container{get; private set;}
 
@@ -22,6 +26,8 @@ public class GameManager : MonoBehaviour
                 Container.Register(new RoundManager());
                 
                 Container.Register(cardGroupsSO);
+                Container.Register(cardPrefab);
+                
                 
                 Container.InitializeAll();
         }

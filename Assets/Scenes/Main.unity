@@ -326,9 +326,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<color=#AE772C>\uCD0C\uC7A5sd\uB2D8</color> \n\uB18D\uC0AC\uB97C \uC9C0\uC73C\uB824\uBA74
-    \uC528\uC557sd\uC774 \uC788\uC5B4\uC57C\uC9C0!\n\uC6D0\uD558\uB294 \uC528\uC557\uC744
-    \uACE8\uB77C\uBCF4\uAC8C"
+  m_text: <align=center><b>Harvest Tale</b></align>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2a20b144d9b139146ae4c44eeb0f7108, type: 2}
   m_sharedMaterial: {fileID: -5237770231429859220, guid: 2a20b144d9b139146ae4c44eeb0f7108, type: 2}
@@ -355,7 +353,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.05
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -886,6 +884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardGroupsSO: {fileID: 11400000, guid: aa61120df621ddc42b71ee8b4a19353a, type: 2}
+  cardPrefab: {fileID: 1674820907}
 --- !u!4 &860929223
 Transform:
   m_ObjectHideFlags: 0
@@ -1157,7 +1156,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1345976144
 RectTransform:
   m_ObjectHideFlags: 0

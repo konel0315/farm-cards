@@ -27,19 +27,10 @@ public class Card : MonoBehaviour
 
     private bool isFlipping = false;
     private ChoiceCardTilt followMouse;
-
-    public static Card Instance { get; private set; }
-
+    
     public event System.Action OnCardChoiceCompleted;
 
-    // -----------------------------
-    // Unity Lifecycle
-    // -----------------------------
-    private void Awake()
-    {
-        Instance = this;
-    }
-
+    
     private void Update()
     {
         if (choiceCard.activeSelf && Input.GetMouseButtonDown(0))
@@ -48,9 +39,7 @@ public class Card : MonoBehaviour
         }
     }
 
-    // -----------------------------
-    // Public Methods
-    // -----------------------------
+
     public void CardSetup(CardGroup group)
     {
         screenImage.sprite = Resources.Load<Sprite>($"Arts/Cards/{group.TitleImage}");
@@ -78,14 +67,13 @@ public class Card : MonoBehaviour
 
     public void OpenCardWithAnimation()
     {
+        
         OpenCard();
         StartCoroutine(SpawnAndFlip());
     }
 
-    // -----------------------------
-    // Private Methods
-    // -----------------------------
-    private void OpenCard()
+
+    public void OpenCard()
     {
         if (CardContainer != null)
             CardContainer.transform.localPosition = Vector3.zero;
@@ -153,9 +141,10 @@ public class Card : MonoBehaviour
         scenarioCard.transform.localEulerAngles = new Vector3(0, -90, 0);
         scenarioCard.SetActive(true);
         back.SetActive(false);
-
+        
         yield return scenarioCard.transform.DORotate(Vector3.zero, 0.25f).WaitForCompletion();
 
+        
         isFlipping = false;
     }
 

@@ -62,3 +62,67 @@ MonoBehaviour:
           Variants:
           - Probability: 1
             Command: "crop=\uACE0\uCD94"
+    - Key: 1
+      Value:
+        Title: "\uC528\uC557 \uAC1C\uC218"
+        Name: "<color=#AE772C>\uCD0C\uC7A5\uB2D8</color> "
+        TitleImage: "\uB9C8\uC744 \uCD0C\uC7A5 \uD560\uC544\uBC84\uC9C0"
+        Description: "\uC5BC\uB9C8\uB098 \uAD6C\uB9E4\uD560\uAC74\uAC00? <br>\uB9CE\uC774
+          \uC0AC\uC11C \uBE5A\uC744 \uC9C0\uAC8C \uB418\uBA74 \uD30C\uC0B0\uD560
+          \uC218\uB3C4 \uC788\uC73C\uB2C8 \uC870\uC2EC\uD558\uAC8C"
+        Priority: 1
+        Weight: 1
+        OneTime: 1
+        SeasonType: 0
+        Options:
+        - OptionText: "10\uAC1C"
+          OptionImage: X10
+          Variants:
+          - Probability: 1
+            Command: 
+        - OptionText: "30\uAC1C"
+          OptionImage: X30
+          Variants:
+          - Probability: 1
+            Command: 
+        - OptionText: "50\uAC1C"
+          OptionImage: X50
+          Variants:
+          - Probability: 1
+            Command: 
+        - OptionText: "100\uAC1C"
+          OptionImage: X100
+          Variants:
+          - Probability: 1
+            Command: 
+    - Key: 2
+      Value:
+        Title: "\uBD04\uC774\uBCA4\uD2B8 \uC608\uC2DC"
+        Name: "\uBD04\uC774\uBCA4\uD2B8"
+        TitleImage: "\uBD04\uC774\uBCA4\uD2B8"
+        Description: "\uBD04\uC774\uBCA4\uD2B8"
+        Priority: 2
+        Weight: 1
+        OneTime: 1
+        SeasonType: 2
+        Options:
+        - OptionText: "10\uAC1C"
+          OptionImage: 
+          Variants:
+          - Probability: 1
+            Command: 
+        - OptionText: "30\uAC1C"
+          OptionImage: 
+          Variants:
+          - Probability: 1
+            Command: 
+        - OptionText: "50\uAC1C"
+          OptionImage: 
+          Variants:
+          - Probability: 1
+            Command: 
+        - OptionText: "100\uAC1C"
+          OptionImage: 
+          Variants:
+          - Probability: 1
+            Command: 
