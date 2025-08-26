@@ -11,5 +11,8 @@ public class RoundManager : IManager
     
     public void StartRound()
     {
+        Debug.Log("1라운드!");
+        cardManager.StartFlow();
+        
     }
 }

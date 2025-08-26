@@ -20,11 +20,12 @@ public class GameManager : MonoBehaviour
                 Container = new ManagerContainer();
                 Container.Register(new CardManager());
                 Container.Register(new RoundManager());
+                
                 Container.Register(cardGroupsSO);
                 
                 Container.InitializeAll();
         }
-        public void StartGame()
+        public void Start()
         {
             Debug.Log("게임 시작!");
             Container.GetManager<RoundManager>().StartRound();

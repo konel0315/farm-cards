@@ -45,21 +45,37 @@ public class CardFactory
 
     public CardGroup GetRandomCard()
     {
-        if (AvailablePool.Count == 0)
+        var selectablePool = AvailablePool.FindAll(c => c.OneTime != false);
+        if (selectablePool.Count == 0)
             return null;
         
-        int totalWeight = 0;
-        foreach (var card in AvailablePool)
-            totalWeight += card.Weight;
+        int minPriority = int.MaxValue;
+        foreach (var card in selectablePool)
+        {
+            int priority = card.Priority;
+            if (priority < minPriority)
+                minPriority = priority;
+        }
         
+        var priorityPool = selectablePool.FindAll(c => c.Priority == minPriority);
+        
+        int totalWeight = 0;
+        foreach (var card in priorityPool)
+            totalWeight += card.Weight;
+
         int rand = Random.Range(0, totalWeight);
         int cumulative = 0;
 
-        foreach (var card in AvailablePool)
+        foreach (var card in priorityPool)
         {
             cumulative += card.Weight;
             if (rand < cumulative)
+            {
+                if (card.OneTime == true)
+                    card.OneTime = false;
+
                 return card;
+            }
         }
 
         return null;
